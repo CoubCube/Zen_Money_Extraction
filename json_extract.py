@@ -28,11 +28,13 @@ if response.status_code == 200:
     print("API Request Successful.")
 
     # read data from the datasource
-    # print(response.json())
     accounts = response.json().get('account', [])
     companies = response.json().get('company', [])
     countries = response.json().get('country', [])
+    budget = response.json().get('budget', [])
     instruments = response.json().get('instrument', [])
+    reminders = response.json().get('reminder', [])
+    reminderMarker = response.json().get('reminderMarker', [])
     tags = response.json().get('tag', [])
     transactions = response.json().get('transaction', [])
     users = response.json().get('user', [])
@@ -50,7 +52,10 @@ if response.status_code == 200:
         ('accounts', accounts),
         ('companies', companies),
         ('countries', countries),
+        ('budget', budget),
         ('instruments', instruments),
+        ('reminders', reminders),
+        ('reminderMarker', reminderMarker),
         ('tags', tags),
         ('transactions', transactions),
         ('users', users)
